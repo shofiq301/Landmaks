@@ -11,6 +11,8 @@ Landmarks is a SwiftUI application that provides detailed information about vari
 
 - **MVVM Pattern**: Ensures a clear code and maintainability.
 - **Combine Framework**: Utilized for handling asynchronous operations and data binding.
+- **Dependency Injection**: Decouple components by ensuring that a class doesn't rely on the concrete implementations of its dependencies. 
+- **Protocol Oriented Programming**: Allowing more flexibility for reusable components
 
 ## Unit Tests
 
@@ -21,7 +23,8 @@ The project includes a comprehensive suite of unit tests to ensure the reliabili
 
 ### Test Cases
 
-The `LandmarkViewModelTests` class tests the `LandmarkViewModel` for both success and failure scenarios using a mock data provider.
+The `LandmarkViewModelTests` class tests the `LandmarkViewModel` for both success and failure scenarios using a mock data provider. 
+The `LandmarkDataProviderTests` class tests the `LandmarkDataProvider` class and using a mock data provider.
 
 
 
