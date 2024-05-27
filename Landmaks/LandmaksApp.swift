@@ -11,7 +11,7 @@ import SwiftUI
 struct LandmaksApp: App {
     var body: some Scene {
         WindowGroup {
-            LandmarkMainView()
+            ContentView()
         }
     }
 }

@@ -6,88 +6,30 @@
 //
 
 import XCTest
-import Combine
-@testable import Landmaks
 
 final class LandmarkViewModelTests: XCTestCase {
-    var cancellables: Set<AnyCancellable>!
-    
-    override func setUp() {
-        super.setUp()
-        cancellables = []
-    }
-    
-    override func tearDown() {
-        cancellables = nil
-        super.tearDown()
-    }
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
+
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    
-    func testGetLandmarDataSuccess() {
-        // Given
-        let landmarks = [
-            LandmarkModel(id: 1, name: "Landmark 1", subtitle: "Test subtitle 1", imageName: "testimage_1"),
-            LandmarkModel(id: 2, name: "Landmark 2", subtitle: "Test subtitle_2", imageName: "testimage_2")
-        ]
-        let mockProvider = MockLandmarkDataProvider(result: .success(landmarks))
-        let viewModel = LandmarkViewModel(landmarservice: mockProvider)
-        
-        let expectation = self.expectation(description: "Landmarks fetched successfully")
-        
-        // When
-        viewModel.$landmarks
-            .sink { landmarks in
-                // Then
-                XCTAssertEqual(landmarks.count, 2)
-                XCTAssertEqual(landmarks[0].name, "Landmark 1")
-                XCTAssertEqual(landmarks[1].name, "Landmark 2")
-                expectation.fulfill()
-            }
-            .store(in: &cancellables)
-        
-        // Wait for expectations
-        waitForExpectations(timeout: 5, handler: nil)
+
+    func testExample() throws {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // Any test you write for XCTest can be annotated as throws and async.
+        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
+        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
     }
-    
-    func testGetLandmarDataFailure() {
-        // Given
-        let mockProvider = MockLandmarkDataProvider(result: .failure(URLError(.badServerResponse)))
-        let viewModel = LandmarkViewModel(landmarservice: mockProvider)
-        
-        // Expectation for async test
-        let expectation = self.expectation(description: "Landmarks fetch failed")
-        
-        // When
-        viewModel.$landmarks
-            .sink { landmarks in
-                // Then
-                XCTAssertTrue(landmarks.isEmpty)
-                expectation.fulfill()
-            }
-            .store(in: &cancellables)
-        
-        // Wait for expectations
-        waitForExpectations(timeout: 5, handler: nil)
+
+    func testPerformanceExample() throws {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+        }
     }
-    
-}
-// Mock LandmarkDataProvider
-class MockLandmarkDataProvider: LandmarkDataProvider {
-    var result: Result<[LandmarkModel], Error>
-    
-    init(result: Result<[LandmarkModel], Error>) {
-        self.result = result
-    }
-    
-    func getLandmarks() -> AnyPublisher<[LandmarkModel], Error> {
-        return result
-            .publisher
-            .eraseToAnyPublisher()
-    }
+
 }

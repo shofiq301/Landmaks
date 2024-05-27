@@ -7,6 +7,6 @@
 
 import Foundation
 import Combine
-protocol LandmarkDataProvider {
-    func getLandmarks() -> AnyPublisher<[LandmarkModel], Error>
+protocol LandmakProtocol {
+    func getLandmarks() -> AnyPublisher<[LandMarkModel], Error>
 }
