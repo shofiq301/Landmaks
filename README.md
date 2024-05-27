@@ -24,7 +24,12 @@ The project includes a comprehensive suite of unit tests to ensure the reliabili
 ### Test Cases
 
 The `LandmarkViewModelTests` class tests the `LandmarkViewModel` for both success and failure scenarios using a mock data provider. 
+
+<img width="756" alt="Screenshot 2024-05-27 at 11 22 18 PM" src="https://github.com/shofiq301/Landmaks/assets/36738344/2f476db5-4a3c-40d1-a529-bd95c32c4314">
+
 The `LandmarkDataProviderTests` class tests the `LandmarkDataProvider` class and using a mock data provider.
+
+<img width="758" alt="Screenshot 2024-05-27 at 11 22 46 PM" src="https://github.com/shofiq301/Landmaks/assets/36738344/6d41d66d-e786-4571-a0c1-586a60ffbed3">
 
 
 
