@@ -19,16 +19,7 @@ The project includes a comprehensive suite of unit tests to ensure the reliabili
 - Data providers (both local and remote)
 - Error handling scenarios
 
-### Running Tests
-
-To run the tests:
-1. Open the project in Xcode.
-2. Select the test target.
-3. Press `Cmd + U` to run all tests.
-
-### Example Test Cases
-
-#### ViewModel Test Cases
+### Test Cases
 
 The `LandmarkViewModelTests` class tests the `LandmarkViewModel` for both success and failure scenarios using a mock data provider.
 
